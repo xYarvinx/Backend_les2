@@ -7,7 +7,6 @@ public class User {
 
   public void UpdateUser (User user) {
     this.name = user.getName();
-    this.login = user.getLogin();
     this.password = user.getPassword();
   }
 

@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Database {
   static class UserNotFound extends Exception {
-
+    public void errorMessage(){
+      System.out.println("Пользователь не найден");
+    }
   };
 
   public static List<User> dataBase = new ArrayList<>();
@@ -25,8 +27,8 @@ public class Database {
       }
       throw new UserNotFound();
     }
-    catch (UserNotFound e) {
-      System.out.println("Пользователь не найден!");
+    catch (UserNotFound userNotFound) {
+      userNotFound.errorMessage();
       return null;
     }
   }
@@ -44,7 +46,7 @@ public class Database {
       }
       throw new UserNotFound();
     }catch(UserNotFound userNotFound) {
-        System.out.println("Пользователь не найден");
+       userNotFound.errorMessage();
       }
 
     }
